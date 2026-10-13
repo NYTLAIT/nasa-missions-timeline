@@ -1,0 +1,30 @@
+html,
+body {
+  height: 100%;
+}
+
+.mission-card {
+  position: relative;
+}
+
+.mission-modal {
+  display: none;
+  position: absolute;
+
+  bottom: 100%;
+  margin-bottom: 1rem;
+  left: 0;
+  z-index: 999;
+
+  width: 264px;
+  background-color: white;
+
+  padding: 2px;
+  border: 1px solid;
+  border-radius: 6px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.mission-card:hover .mission-modal {
+  display: block
+}
