@@ -7,6 +7,10 @@ Resources:
 - https://docs.sqlalchemy.org/en/21/orm/quickstart.html - SQLAlchemy Docs: Quickstart
 - https://github.com/ajbraus/bloginator/tree/main - Flask + SQLAlchemy
 - https://github.com/NYTLAIT/ACS-1320-React-Fundamentals-Tutorial - CSS
+- https://github.com/NYTLAIT/shape-calculator - Javascript watcher
+- https://github.com/Tech-at-DU/Proud-Petes-Pet-Emporium - Simple Search
+- https://github.com/NYTLAIT/Antarctica-Research-Stations - Search Filter
+- https://github.com/NYTLAIT/savemeporo - Dynamic Search
 
 ---------------------------------------------------------
 

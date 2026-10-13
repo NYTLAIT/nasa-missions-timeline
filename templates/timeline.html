@@ -1,10 +1,14 @@
 {% extends "base.html" %}
 
 {% block header %}
-<form id="filter">
-  <input type="text" id="filter-input" name="filter" placeholder="filter" required>
-  <button type="submit">Submit</button>
-</form>
+<form id="filter" class="filter"></form>
+<label for="filter-type">Filter by:
+  <select id="filter-type" name="filter-type">
+    <option value="default" id="default" disabled selected>Filter</option>
+    <option value="area">years</option>
+  </select>
+</label>
+
 {% endblock %}
 
 {% block content %}
