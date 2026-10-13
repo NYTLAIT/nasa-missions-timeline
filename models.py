@@ -1,7 +1,10 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
-from sqlalchemy import String, ForeignKey
+from sqlalchemy import Date, CheckConstraint
+
+from datetime import date
+from typing import Literal, Optional
 
 class Base(DeclarativeBase):
     id: Mapped[int] = mapped_column(primary_key=True)
@@ -19,9 +22,11 @@ def init_db(app: Flask):
         db.create_all()
 
 # ------ MODELS
-class Missions(db.Model):
+class Mission(db.Model):
     __tablename__ = 'missions'
 
     mission: Mapped[str] = mapped_column()
-    launch: Mapped[int] = mapped_column()
+    launch: Mapped[date] = mapped_column(Date)
+    status: Mapped[Literal['ongoing', 'complete']] = mapped_column(CheckConstraint("status IN ('ongoing', 'complete')"))
+    end: Mapped[Optional[date]] = mapped_column(Date, nullable=True)
     description: Mapped[str] = mapped_column()

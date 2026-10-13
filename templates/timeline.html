@@ -1,7 +1,12 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="timeline">
-
+<div class="timeline flex gap-4">
+    {% for mission in missions %}
+    <div class="mission-card border">
+        <h2>{{ mission.mission }}</h2>
+        <p>{{ mission.description }}</p>
+    </div>
+    {% endfor %}
 </div>
 {% endblock %}
