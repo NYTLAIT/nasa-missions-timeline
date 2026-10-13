@@ -21,3 +21,7 @@ def init_db(app: Flask):
 # ------ MODELS
 class Missions(db.Model):
     __tablename__ = 'missions'
+
+    mission: Mapped[str] = mapped_column()
+    launch: Mapped[int] = mapped_column()
+    description: Mapped[str] = mapped_column()
