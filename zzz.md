@@ -10,8 +10,10 @@ Resources:
 - https://github.com/NYTLAIT/ACS-1320-React-Fundamentals-Tutorial - CSS
 - https://github.com/NYTLAIT/shape-calculator - Javascript watcher
 - https://github.com/Tech-at-DU/Proud-Petes-Pet-Emporium - Simple Search
-- https://github.com/NYTLAIT/Antarctica-Research-Stations - Search Filter
 - https://github.com/NYTLAIT/savemeporo - Dynamic Search
+
+
+- https://www.pythonforbeginners.com/basics/check-if-a-string-is-empty-or-whitespace-in-python - Checking for whitespace lol
 
 ---------------------------------------------------------
 
@@ -24,6 +26,7 @@ SCHEDULE:
 
 2. Tuesday (DAY 2):
     - Goal: YESTERDAY - Set up Javascipt listener to at least be able to filter something with the very few data have to check if working | DATA - Look for databases and insert into the sql, else spend the whole day populating the tables.
+    - Finished: 
 
 3. Wednesday (DAY 3):
     - Goal: FILTER - Finalize filter | Style better | Start Presentation Preperation.
@@ -33,11 +36,16 @@ SCHEDULE:
 
 ---------------------------------------------------------
 
-Notes:
-- (Models) column name: Mapped['python constraints'] = mapped_column('database constraints')
-    Make sure to have them both
-
 AI Use:
 - pattern for seeding data using flask-sqlalchemy 2.0
 - Model CheckConstraint method use
 - Horizontal Scroll Javascript Listener
+- Brainstorming how to Organize the Filter Inputs
+- Using .where() to get conditional
+- Getting best practices to get multiple param items that may have empty strings
+
+Notes:
+- (Models) column name: Mapped['python constraints'] = mapped_column('database constraints')
+    Make sure to have them both
+- Flask cannot just return nothing (return or return None), must be a valid HTTP response (Strings work)
+    Learned can do this though: return 'Bad Request', 400 - or whatever status

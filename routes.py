@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, redirect, request
 from models import db, Mission
 
 main_bp = Blueprint('main', __name__, url_prefix='/')
@@ -9,3 +9,13 @@ def timeline():
     missions = db.session.scalars(stmt).all()
 
     return render_template('timeline.html', missions=missions)
+
+@main_bp.route('filter', methods=['GET'])
+def filter():
+    raw_filters = request.args.to_dict()
+
+    clean_filters = {key: val.strip() for key, val in raw_filters.items() if val and val.strip()}
+
+    print(clean_filters)
+    return '', 204
+    
