@@ -44,6 +44,7 @@ AI Use:
 - Using .where() to get conditional
 - Getting best practices to get multiple param items that may have empty strings
 - Full search on sql
+- Organizing routes; how to seperate the logic of the routes efficiently
 
 Notes:
 - (Models) column name: Mapped['python constraints'] = mapped_column('database constraints')
@@ -54,4 +55,4 @@ Notes:
     Object.fromEntries() turns key value pairs into an object
     Object.entries() does the opposite of above which makes it rather funny how the wholes thing goes
     Use spread operator to turn into an array
-- .where() is AND not OR
+- .where() joins with AND not OR

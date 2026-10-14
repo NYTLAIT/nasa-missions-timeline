@@ -1,26 +1,16 @@
-from flask import Blueprint, render_template, redirect, request
+from flask import Blueprint, render_template, url_for, redirect, request
 from sqlalchemy import String, or_
 from models import db, Mission
 
 main_bp = Blueprint('main', __name__, url_prefix='/')
 
+# ----------- MAIN RENDER ROUTE WITH FILTER LOGIC ----------- 
 @main_bp.route('')
 def timeline():
+    filters = request.args
     stmt = db.select(Mission)
-    missions = db.session.scalars(stmt).all()
 
-    return render_template('timeline.html', missions=missions)
-
-@main_bp.route('filter', methods=['GET'])
-def filter_missions():
-    raw_filters = request.args.to_dict() 
-    filters = {
-        key: val.strip()
-        for key, val in raw_filters.items() 
-        if val.strip() != ''
-    }
-
-    # ------ INPUT FIELDS
+# ---- INPUT FIELDS
     general_search = filters.get('general-search')
     status = filters.get('status')
     date_start = filters.get('date-start')
@@ -34,7 +24,7 @@ def filter_missions():
     objective = filters.get('objective')
     site = filters.get('site')
 
-    # ------ DATABASE
+    # ---- DATABASE
     stmt = db.select(Mission)
 
     # -- FULL SEARCH
@@ -85,5 +75,22 @@ def filter_missions():
     # -- RUN IT
     missions = db.session.scalars(stmt).all()
 
-    return missions
+    return render_template('timeline.html', missions=missions)
+
+# ----------- GATHER FILTERS FROM JAVASCRIPT -----------  
+@main_bp.route('filter', methods=['GET'])
+def filter_missions():
+    raw_filters = request.args.to_dict() 
+    filters = {
+        key: val.strip()
+        for key, val in raw_filters.items() 
+        if val.strip() != ''
+    }
+
+    return redirect(url_for('main.timeline', **filters))
+
+# ----------- RESET FILTERS ----------- 
+@main_bp.route('/reset')
+def reset_filters():
+    return redirect(url_for('main.timeline'))
     
