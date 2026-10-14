@@ -26,7 +26,7 @@ SCHEDULE:
 
 2. Tuesday (DAY 2):
     - Goal: YESTERDAY - Set up Javascipt listener to at least be able to filter something with the very few data have to check if working | DATA - Look for databases and insert into the sql, else spend the whole day populating the tables.
-    - Finished: 
+    - Finished: - Form submition goes through javascript that creates filter url to point to python route to handle sql querying | 
 
 3. Wednesday (DAY 3):
     - Goal: FILTER - Finalize filter | Style better | Start Presentation Preperation.
