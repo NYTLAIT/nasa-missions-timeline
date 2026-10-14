@@ -25,8 +25,12 @@ def init_db(app: Flask):
 class Mission(db.Model):
     __tablename__ = 'missions'
 
-    mission: Mapped[str] = mapped_column()
+    name: Mapped[str] = mapped_column()
+    status: Mapped[Literal['ongoing', 'concluded', 'abandoned']] = mapped_column(CheckConstraint("status IN ('ongoing', 'concluded', 'abandoned')"))
     launch: Mapped[date] = mapped_column(Date)
-    status: Mapped[Literal['ongoing', 'complete']] = mapped_column(CheckConstraint("status IN ('ongoing', 'complete')"))
     end: Mapped[Optional[date]] = mapped_column(Date, nullable=True)
     description: Mapped[str] = mapped_column()
+    type: Mapped[str] = mapped_column()
+    target: Mapped[str] = mapped_column()
+    objective: Mapped[str] = mapped_column()
+    site: Mapped[str] = mapped_column()

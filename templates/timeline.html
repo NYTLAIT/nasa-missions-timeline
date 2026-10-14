@@ -1,13 +1,86 @@
 {% extends "base.html" %}
 
 {% block header %}
-<form id="filter" class="filter"></form>
-<label for="filter-type">Filter by:
-  <select id="filter-type" name="filter-type">
-    <option value="default" id="default" disabled selected>Filter</option>
-    <option value="area">years</option>
-  </select>
-</label>
+<form id="filter" class="filter">
+  <!-- General Search -->
+  <label for="general-search">Search
+    <input type="text" id="general-search">
+  </label>
+
+  <!-- Status -->
+  <fieldset>
+    <legend>Status</legend>
+
+    <label for="status-ongoing">
+      <input type="radio" id="status-ongoing" name="status" value="ongoing">
+      Ongoing
+    </label>
+
+    <label for="status-concluded">
+      <input type="radio" id="status-concluded" name="status" value="concluded">
+      Concluded
+    </label>
+
+    <label for="status-abandoned">
+      <input type="radio" id="status-abandoned" name="status" value="abandoned">
+      Abandoned
+    </label>
+  </fieldset>
+
+  <!-- Date Range -->
+  <fieldset>
+    <legend>Date Range</legend>
+    <label for="date-start">Start
+      <input type="date" id="date-start">
+    </label>
+    <label for="date-end">End
+      <input type="date" id="date-end">
+    </label>
+  </fieldset>
+
+  <!-- Launch Range -->
+  <fieldset>
+    <legend>Launch Range</legend>
+    <label for="launch-start">Start
+      <input type="date" id="launch-start">
+    </label>
+    <label for="launch-end">End
+      <input type="date" id="launch-end">
+    </label>
+  </fieldset>
+
+  <!-- Concluded Range -->
+  <fieldset>
+    <legend>Concluded Range</legend>
+    <label for="concluded-start">Start
+      <input type="date" id="concluded-start">
+    </label>
+    <label for="concluded-end">End
+      <input type="date" id="concluded-end">
+    </label>
+  </fieldset>
+
+  <!-- Type -->
+  <label for="type">Type
+    <input type="text" id="type">
+  </label>
+
+  <!-- Target -->
+  <label for="target">Target
+    <input type="text" id="target">
+  </label>
+
+  <!-- Objective -->
+  <label for="objective">Objective
+    <input type="text" id="objective">
+  </label>
+
+  <!-- Site -->
+  <label for="site">Site
+    <input type="text" id="site">
+  </label>
+
+</form>
 
 {% endblock %}
 

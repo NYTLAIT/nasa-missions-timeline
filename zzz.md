@@ -39,3 +39,4 @@ Notes:
 AI Use:
 - pattern for seeding data using flask-sqlalchemy 2.0
 - Model CheckConstraint method use
+- Horizontal Scroll Javascript Listener
