@@ -12,7 +12,7 @@ Resources:
 - https://github.com/Tech-at-DU/Proud-Petes-Pet-Emporium - Simple Search
 - https://github.com/NYTLAIT/savemeporo - Dynamic Search
 - https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior - Conver string to date object
-- 
+- https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch - Fetching
 
 
 - https://www.pythonforbeginners.com/basics/check-if-a-string-is-empty-or-whitespace-in-python - Checking for whitespace lol
@@ -28,13 +28,14 @@ SCHEDULE:
 
 2. Tuesday (DAY 2):
     - Goal: YESTERDAY - Set up Javascipt listener to at least be able to filter something with the very few data have to check if working | DATA - Look for databases and insert into the sql, else spend the whole day populating the tables.
-    - Finished: - Form submition goes through javascript that creates filter url to point to python route to handle sql querying | 
+    - Finished: - Form submition goes through javascript that creates filter url to point to python route to handle sql querying
 
 3. Wednesday (DAY 3):
-    - Goal: FILTER - Finalize filter | Style better | Start Presentation Preperation.
+    - Goal: YESTERDAY - Be able to render the timeline, populate json| FILTER - Finalize filter
+    - Finished: Able to seed database with json data | 
 
-4. Thursday (FINAL - Limited to before class):
-    - Goal: Run through presentation preperation.
+4. Thursday (DAY 4):
+    - Goal: STYLING && PRESENTATION - Style the application, create presetation slides
 
 ---------------------------------------------------------
 
@@ -48,6 +49,12 @@ AI Use:
 - Full search on sql
 - Organizing routes; how to seperate the logic of the routes efficiently
 - Prompt: "If I have a date value in strings, in a dictionary, in a list of many dictionaries with the same issue. How can I convert them all to actual date objects? Would it okay to iterate over all dictionaries and do datetime.strptime(entry, %Y-%m-%d)?"
+- "Prompt: "Whys is this:     
+missions = db.session.scalars(stmt).all()
+return jsonify(missions)
+giving me a type error?"
+- Prompt: "Say a url points me to route that gives me a json of items I need but another url actually handles the rendering. How can I make it so that it retains bookmark functionality as the parameters will disappear when rendered while keeping the setup?"
+- Building URL dynamically
 
 Notes:
 - (Models) column name: Mapped['python constraints'] = mapped_column('database constraints')
@@ -59,3 +66,4 @@ Notes:
     Object.entries() does the opposite of above which makes it rather funny how the wholes thing goes
     Use spread operator to turn into an array
 - .where() joins with AND not OR
+- db.session.scalars(stmt).all() returns Model objects not dictionaries

@@ -1,28 +1,50 @@
-from flask import Blueprint, render_template, url_for, redirect, request
+from flask import Blueprint, render_template, request, jsonify
 from sqlalchemy import String, or_
 from models import db, Mission
 
+from datetime import date
+
 main_bp = Blueprint('main', __name__, url_prefix='/')
 
-# ----------- MAIN RENDER ROUTE WITH FILTER LOGIC ----------- 
+# ----------- MAIN RENDER ROUTE ----------- -----------
 @main_bp.route('')
 def timeline():
-    filters = request.args
-    stmt = db.select(Mission)
+    return render_template('timeline.html')
 
-# ---- INPUT FIELDS
+# ----------- RETURN JSON OF MISSIONS ----------- -----------
+@main_bp.route('missions')
+def missions():
+    # ---- GRABBING URL PARAMS
+    raw_filters = request.args.to_dict() 
+    filters = {
+        key: val.strip()
+        for key, val in raw_filters.items() 
+        if val.strip() != ''
+    }
+
+    # ---- INPUT FIELDS
     general_search = filters.get('general-search')
     status = filters.get('status')
+
     date_start = filters.get('date-start')
     date_end = filters.get('date-end')
     launch_start = filters.get('launch-start')
     launch_end = filters.get('launch-end')
     concluded_start = filters.get('concluded-start')
-    concluded_end = filters.get('consluded-end')
+    concluded_end = filters.get('concluded-end')
+
     type = filters.get('type')
     target = filters.get('target')
     objective = filters.get('objective')
     site = filters.get('site')
+
+    # ---- CONVERT TO DATE OBJECTS
+    date_start = date.fromisoformat(date_start) if date_start else None
+    date_end = date.fromisoformat(date_end) if date_end else None
+    launch_start = date.fromisoformat(launch_start) if launch_start else None
+    launch_end = date.fromisoformat(launch_end) if launch_end else None
+    concluded_start = date.fromisoformat(concluded_start) if concluded_start else None
+    concluded_end = date.fromisoformat(concluded_end) if concluded_end else None
 
     # ---- DATABASE
     stmt = db.select(Mission)
@@ -51,7 +73,7 @@ def timeline():
     if launch_end:
         stmt = stmt.where(Mission.launch <= launch_end)
 
-    if concluded_end:
+    if concluded_start:
         stmt = stmt.where(Mission.concluded >= concluded_start)
     if concluded_end:
         stmt = stmt.where(Mission.concluded <= concluded_end)
@@ -73,24 +95,20 @@ def timeline():
         stmt = stmt.where(Mission.site.ilike(f'%{site}%'))
 
     # -- RUN IT
-    missions = db.session.scalars(stmt).all()
+    missions = db.session.scalars(stmt).all() 
 
-    return render_template('timeline.html', missions=missions)
-
-# ----------- GATHER FILTERS FROM JAVASCRIPT -----------  
-@main_bp.route('filter', methods=['GET'])
-def filter_missions():
-    raw_filters = request.args.to_dict() 
-    filters = {
-        key: val.strip()
-        for key, val in raw_filters.items() 
-        if val.strip() != ''
-    }
-
-    return redirect(url_for('main.timeline', **filters))
-
-# ----------- RESET FILTERS ----------- 
-@main_bp.route('/reset')
-def reset_filters():
-    return redirect(url_for('main.timeline'))
-    
+    return jsonify([
+        {
+        "name": mission.name,
+        "status": mission.status,
+        "launch": mission.launch,
+        "concluded": mission.concluded,
+        "description": mission.description,
+        "type": mission.type,
+        "target": mission.target,
+        "objective": mission.objective,
+        "site": mission.site,
+        "link": mission.link
+        }
+        for mission in missions
+    ])
