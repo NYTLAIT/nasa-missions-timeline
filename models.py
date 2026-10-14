@@ -28,7 +28,7 @@ class Mission(db.Model):
     name: Mapped[str] = mapped_column()
     status: Mapped[Literal['ongoing', 'concluded', 'abandoned']] = mapped_column(CheckConstraint("status IN ('ongoing', 'concluded', 'abandoned')"))
     launch: Mapped[date] = mapped_column(Date)
-    end: Mapped[Optional[date]] = mapped_column(Date, nullable=True)
+    concluded: Mapped[Optional[date]] = mapped_column(Date, nullable=True)
     description: Mapped[str] = mapped_column()
     type: Mapped[str] = mapped_column()
     target: Mapped[str] = mapped_column()
