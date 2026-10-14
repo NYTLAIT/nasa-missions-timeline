@@ -49,3 +49,7 @@ Notes:
     Make sure to have them both
 - Flask cannot just return nothing (return or return None), must be a valid HTTP response (Strings work)
     Learned can do this though: return 'Bad Request', 400 - or whatever status
+- .entries() returns an iterator, not an array with arrays inside, just arrays in an iterator
+    Object.fromEntries() turns key value pairs into an object
+    Object.entries() does the opposite of above which makes it rather funny how the wholes thing goes
+    Use spread operator to turn into an array

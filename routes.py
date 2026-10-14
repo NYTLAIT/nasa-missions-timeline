@@ -12,10 +12,16 @@ def timeline():
 
 @main_bp.route('filter', methods=['GET'])
 def filter():
-    raw_filters = request.args.to_dict()
+    raw_filters = request.args.to_dict() 
+    filters = {
+        key: val.strip()
+        for key, val in raw_filters.items() 
+        if val.strip() != ''
+    }
+    print(filters)
 
-    clean_filters = {key: val.strip() for key, val in raw_filters.items() if val and val.strip()}
+    # Fallbacks
 
-    print(clean_filters)
+
     return '', 204
     
