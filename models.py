@@ -34,3 +34,4 @@ class Mission(db.Model):
     target: Mapped[str] = mapped_column()
     objective: Mapped[str] = mapped_column()
     site: Mapped[str] = mapped_column()
+    link: Mapped[str] = mapped_column()

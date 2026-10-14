@@ -1,4 +1,36 @@
 [
-  {},
-  {}
+  {
+    "name": "Apollo 11",
+    "status": "concluded",
+    "launch": "1969-07-16",
+    "concluded": "1969-07-24",
+    "description": "US astronauts became the first to perform a crewed lunar landing and return to Earth.",
+    "type": "Lunar Landing",
+    "target": "Moon",
+    "objective": "Perform Crewed Lunar Landing",
+    "site": "Kennedy Space Center",
+    "link": "https://www.nasa.gov/mission/apollo-11/"
+  },
+  {
+    "name": "Hubble Space Telescope",
+    "status": "ongoing",
+    "launch": "1990-04-24",
+    "desription": "Space-based observatory launched to study the universe, free from Earth's atmospheric distortion.",
+    "type": "Space Telescope",
+    "target": "Low Earth Orbit",
+    "objective": "Understand the Universe",
+    "site": "Kennedy Space Center",
+    "link": "https://science.nasa.gov/mission/hubble/"
+  },
+  {
+    "name": "Mars 2020: Perseverance Rover",
+    "status": "ongoing",
+    "launch": "2020-07-30",
+    "description": "Landing Feb. 18, 2021 on Mars, Perseverance Rover collects samples of Martian rock to search for signs of ancient microbial life.",
+    "type": "Rover",
+    "target": "Jezero Crater, Mars",
+    "objective": "Seek signs of ancient life, Collect samples of rock and regolith",
+    "site": "Cape Canaveral Air Force Station",
+    "link": "https://science.nasa.gov/mission/mars-2020-perseverance/"
+  }
 ]
