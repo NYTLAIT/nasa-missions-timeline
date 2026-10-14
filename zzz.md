@@ -11,6 +11,8 @@ Resources:
 - https://github.com/NYTLAIT/shape-calculator - Javascript watcher
 - https://github.com/Tech-at-DU/Proud-Petes-Pet-Emporium - Simple Search
 - https://github.com/NYTLAIT/savemeporo - Dynamic Search
+- https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior - Conver string to date object
+- 
 
 
 - https://www.pythonforbeginners.com/basics/check-if-a-string-is-empty-or-whitespace-in-python - Checking for whitespace lol
@@ -45,6 +47,7 @@ AI Use:
 - Getting best practices to get multiple param items that may have empty strings
 - Full search on sql
 - Organizing routes; how to seperate the logic of the routes efficiently
+- Prompt: "If I have a date value in strings, in a dictionary, in a list of many dictionaries with the same issue. How can I convert them all to actual date objects? Would it okay to iterate over all dictionaries and do datetime.strptime(entry, %Y-%m-%d)?"
 
 Notes:
 - (Models) column name: Mapped['python constraints'] = mapped_column('database constraints')

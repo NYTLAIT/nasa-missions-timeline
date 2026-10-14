@@ -2,7 +2,8 @@ from app import app
 from models import db
 from models import Mission
 
-from datetime import date
+from datetime import datetime
+import json
 
 def seed_database():
     print("Initializing database seeding...")
@@ -13,8 +14,22 @@ def seed_database():
         print("Database already has data. Skipping seed.")
         return
 
-    # Defining Preset Data    
-    missions = Mission(**())
+    # Setting Preset Data From json After Cleaning
+    missions = []
+
+    with open('data.json', 'r', encoding="utf-8") as f:
+        raw_missions = json.load(f)
+
+    for mission in raw_missions:
+        mission["launch"] = datetime.strptime(
+            mission["launch"], "%Y-%m-%d"
+        )
+
+        if mission.get('concluded'):
+            mission["concluded"] = datetime.strptime(
+                mission["concluded"], "%Y-%m-%d"
+            )
+        missions.append(Mission(**mission))
 
     # 4. Stage and Commit
     db.session.add_all(missions)
