@@ -54,7 +54,7 @@ missions = db.session.scalars(stmt).all()
 return jsonify(missions)
 giving me a type error?"
 - Prompt: "Say a url points me to route that gives me a json of items I need but another url actually handles the rendering. How can I make it so that it retains bookmark functionality as the parameters will disappear when rendered while keeping the setup?"
-- Building URL dynamically
+- Formatting dates in javascript rendering to something readable
 
 Notes:
 - (Models) column name: Mapped['python constraints'] = mapped_column('database constraints')

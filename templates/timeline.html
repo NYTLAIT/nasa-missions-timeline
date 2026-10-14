@@ -89,16 +89,7 @@
 
 <!-- ----------- TIMELINE ----------- -->
 {% block content %}
-<div class="timeline my-auto flex gap-4">
-  {% for mission in missions %}
-  <div class="mission-card border">
-    <h2>{{ mission.mission }}</h2>
-
-    <div class="mission-modal">
-      <p>{{ mission.description }}</p>
-    </div>
-
-  </div>
-  {% endfor %}
+<div id="timeline" class="my-auto flex gap-4">
+  <!-- JAVASCRIPT POPULATED MISSIONS -->
 </div>
 {% endblock %}

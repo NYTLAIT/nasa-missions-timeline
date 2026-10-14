@@ -5,6 +5,8 @@ body {
 
 .mission-card {
   position: relative;
+
+  border: 1px solid black;
 }
 
 .mission-modal {

@@ -49,6 +49,7 @@ def missions():
     # ---- DATABASE
     stmt = db.select(Mission)
 
+
     # -- FULL SEARCH
     if general_search:
         # IMPORTANT: On a larger scale database, performance will be horrible
@@ -95,14 +96,15 @@ def missions():
         stmt = stmt.where(Mission.site.ilike(f'%{site}%'))
 
     # -- RUN IT
+    stmt = stmt.order_by(Mission.launch.asc())
     missions = db.session.scalars(stmt).all() 
 
     return jsonify([
         {
         "name": mission.name,
         "status": mission.status,
-        "launch": mission.launch,
-        "concluded": mission.concluded,
+        "launch": mission.launch.isoformat(),
+        "concluded": mission.concluded.isoformat() if mission.concluded else None,
         "description": mission.description,
         "type": mission.type,
         "target": mission.target,
