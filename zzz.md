@@ -67,3 +67,4 @@ Notes:
     Use spread operator to turn into an array
 - .where() joins with AND not OR
 - db.session.scalars(stmt).all() returns Model objects not dictionaries
+- URLSearchParams() lets treat query strings as key-value pairs the way you can loop through a string and get each character, URLSearchParams gets each key-value pair but shows up as a string among making sure its okay to put in the url and deal with spaces and such

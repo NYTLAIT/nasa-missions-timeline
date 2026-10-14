@@ -1,9 +1,41 @@
 const form = document.querySelector("#filter")
 const reset = document.querySelector('#reset')
-
 const timeline = document.querySelector('#timeline')
 
-// ----------- RENDER ----------- ----------- ----------- ----------- //
+// ***********-***********-***********-***********
+// ----------- HELPERS!!! ----------- //
+// ***********-***********-***********-***********
+
+// ----------- FETCHING ----------- 
+async function fetchMissions(queryString) {
+  try {
+    const response = await fetch(queryString ? `/missions?${queryString}` : '/missions')
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`)
+    }
+
+    const missions = await response.json()
+    console.log(missions)
+    render(missions)
+
+  } catch (error) {
+    console.error(error.message)
+  }
+}
+
+// ----------- LOAD FROM URL ----------- 
+function loadFromURL() {
+  const params = new URLSearchParams(location.search)
+  form.reset()
+
+  for (const [key, value] of params) {
+    if (form.elements[key]) { form.elements[key].value = value }
+  }
+
+  fetchMissions(params.toString())
+}
+
+// ----------- RENDER MISSIONS  ----------- 
 function render(missions) {
   timeline.innerHTML = missions.map(mission => (
     `<div class="mission-card">
@@ -39,67 +71,35 @@ function render(missions) {
   )).join('')
 }
 
-// ----------- FILTERING ----------- ----------- ----------- ----------- //
-form.addEventListener('submit', async (e) => {
+// ***********-***********-***********-***********
+// ----------- LISTENERS!!! ----------- //
+// ***********-***********-***********-***********
+
+// ----------- APPLY FILTERS ----------- 
+form.addEventListener('submit', (e) => {
   e.preventDefault()                                                    // Refresh no change the inputs
 
-  // ---- GETTING ENTRIES=
+  // -- GETTING ENTRIES
   const filterData = new FormData(form)                                 // Grab inputs in a certain format, all strings even date unless file or the like
   const filters = Object.fromEntries(                                   // Turn to key-value pairs
     [...filterData.entries()].filter(entry => entry[1].trim() !== '')   // Iterate through and exclude if value has no entry
   )
 
-  // ---- SETTING PAGE URL AND APIURL =
+  // -- SETTING PAGE URL AND APIURL
   const queryString = new URLSearchParams(filters).toString()           // Turn object to query string
+  history.pushState({}, '', queryString ? `/?${queryString}` : '/')     // Set URL else will just render / even when filters working
 
-  const pageURL = queryString ? `/?${queryString}` : "/"                // Set URL else will just render / even when filters working
-  history.pushState({}, '', pageURL)                                    // Is the code that sets the url
-
-  const apiURL = queryString                                            // Append to Flask endpoint
-    ? `/missions?${queryString}`
-    : '/missions'
-
-  // ---- FETCHING
-  try {
-    const response = await fetch(apiURL)                                 // reminder: fetch gives promise
-    if (!response.ok) {
-      throw new Error(`Response status: ${response.status}`);
-    }
-
-    // -- RENDER
-    const missions = await response.json()
-    console.log(missions)
-    render(missions)
-
-  } catch (error) {
-    console.error(error.message)
-  }
+  fetchMissions(queryString)
 })
 
-// ----------- RESET FILTERS----------- ----------- ----------- ----------- //
-reset.addEventListener('click', async (e) => {
+// ----------- RESET FILTERS ----------- 
+reset.addEventListener('click', (e) => {
   e.preventDefault()
-  // ---- RESET FORM 
   form.reset()
-
-  // ---- SETTING PAGEURL 
   history.pushState({}, '', '/')
-
-  // ---- FETCHING 
-  try {
-    const response = await fetch('/missions')
-    if (!response.ok) {
-      throw new Error(`Response status: ${response.status}`);
-    }
-
-    // -- RENDER
-    const missions = await response.json()
-    console.log(missions)
-    render(missions)
-
-  } catch (error) {
-    console.error(error.message)
-  }
+  fetchMissions(params.toString())
 })
 
-
+// ----------- BOOKMARKS & BACK ----------- 
+window.addEventListener('popstate', loadFromURL)    // back/forward buttons
+loadFromURL()                                       // initial page load / bookmark
