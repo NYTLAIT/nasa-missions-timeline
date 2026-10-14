@@ -14,7 +14,7 @@ form.addEventListener('submit', async (e) => {
   // ---- SETTING PAGE URL AND APIURL -----------
   const queryString = new URLSearchParams(filters).toString()           // Turn object to query string
 
-  const pageURL = queryString ? `/missions?${queryString}` : "/"        // Set URL else will just render / even when filters working
+  const pageURL = queryString ? `/?${queryString}` : "/"                // Set URL else will just render / even when filters working
   history.pushState({}, '', pageURL)                                    // Is the code that sets the url
 
   const apiURL = queryString                                            // Append to Flask endpoint
@@ -53,6 +53,7 @@ reset.addEventListener('click', async (e) => {
     }
 
     const missions = await response.json()
+    console.log(missions)
   } catch (error) {
     console.error(error.message)
   }
