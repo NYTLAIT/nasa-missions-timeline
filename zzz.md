@@ -1,5 +1,6 @@
 Run Using:
-flask --app app run
+$ source .venv/bin/activate
+$ flask --app app run
 Seeding:
 Run python3 seed.py before running app to seed
 

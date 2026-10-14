@@ -1,10 +1,11 @@
 {% extends "base.html" %}
 
+<!-- ----------- FORM ----------- -->
 {% block header %}
 <form id="filter" class="filter">
   <!-- General Search -->
   <label for="general-search">Search
-    <input type="text" id="general-search">
+    <input type="text" id="general-search" name="general-search">
   </label>
 
   <!-- Status -->
@@ -31,10 +32,10 @@
   <fieldset>
     <legend>Date Range</legend>
     <label for="date-start">Start
-      <input type="date" id="date-start">
+      <input type="date" id="date-start" name="date-start">
     </label>
     <label for="date-end">End
-      <input type="date" id="date-end">
+      <input type="date" id="date-end" name="date-end">
     </label>
   </fieldset>
 
@@ -42,10 +43,10 @@
   <fieldset>
     <legend>Launch Range</legend>
     <label for="launch-start">Start
-      <input type="date" id="launch-start">
+      <input type="date" id="launch-start" name="launch-start">
     </label>
     <label for="launch-end">End
-      <input type="date" id="launch-end">
+      <input type="date" id="launch-end" name="launch-end">
     </label>
   </fieldset>
 
@@ -53,37 +54,38 @@
   <fieldset>
     <legend>Concluded Range</legend>
     <label for="concluded-start">Start
-      <input type="date" id="concluded-start">
+      <input type="date" id="concluded-start" name="concluded-start">
     </label>
     <label for="concluded-end">End
-      <input type="date" id="concluded-end">
+      <input type="date" id="concluded-end" name="concluded-end">
     </label>
   </fieldset>
 
   <!-- Type -->
   <label for="type">Type
-    <input type="text" id="type">
+    <input type="text" id="type" name="type">
   </label>
 
   <!-- Target -->
   <label for="target">Target
-    <input type="text" id="target">
+    <input type="text" id="target" name="target">
   </label>
 
   <!-- Objective -->
   <label for="objective">Objective
-    <input type="text" id="objective">
+    <input type="text" id="objective" name="objective">
   </label>
 
   <!-- Site -->
   <label for="site">Site
-    <input type="text" id="site">
+    <input type="text" id="site" name="site">
   </label>
 
+  <input type="submit" value="Search!">
 </form>
-
 {% endblock %}
 
+<!-- ----------- TIMELINE ----------- -->
 {% block content %}
 <div class="timeline my-auto flex gap-4">
   {% for mission in missions %}
