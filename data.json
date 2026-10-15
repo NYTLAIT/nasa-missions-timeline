@@ -7,7 +7,7 @@
     "description": "US astronauts became the first to perform a crewed lunar landing and return to Earth.",
     "type": "Lunar Landing",
     "target": "Moon",
-    "objective": "Perform Crewed Lunar Landing",
+    "objective": "Perform crewed lunar landing",
     "site": "Kennedy Space Center",
     "link": "https://www.nasa.gov/mission/apollo-11/"
   },
@@ -18,7 +18,7 @@
     "description": "Space-based observatory launched to study the universe, free from Earth's atmospheric distortion.",
     "type": "Space Telescope",
     "target": "Low Earth Orbit",
-    "objective": "Understand the Universe",
+    "objective": "Understand the universe",
     "site": "Kennedy Space Center",
     "link": "https://science.nasa.gov/mission/hubble/"
   },
@@ -32,5 +32,17 @@
     "objective": "Seek signs of ancient life, Collect samples of rock and regolith",
     "site": "Cape Canaveral Air Force Station",
     "link": "https://science.nasa.gov/mission/mars-2020-perseverance/"
+  },
+  {
+    "name": "Project Mercury",
+    "status": "concluded",
+    "launch": "1958-10-07",
+    "concluded": "1963-06-12",
+    "description": "USA's first human spaceflight program that included 6 crewed flights piloted by 'The Mercury Seven' military test pilots. It was foundational stepping stone into space, establishing the critical engineering, global communication networks, and human physiological baselines required for further exploration.",
+    "type": "Human Spaceflight Program",
+    "target": "Low Earth Orbit",
+    "objective": "First human spaceflight program, Recover crew and spacecraft safely, Evaluate human performan in space, Orbit a crewed spaceraft",
+    "site": "Cape Canaveral Air Force Station",
+    "link": "https://www.nasa.gov/project-mercury/"
   }
 ]

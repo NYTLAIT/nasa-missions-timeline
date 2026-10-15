@@ -4,7 +4,7 @@ $ flask --app app run
 Seeding:
 Run python3 seed.py before running app to seed
 
-Resources:
+## Resources:
 - https://docs.sqlalchemy.org/en/21/orm/quickstart.html - SQLAlchemy Docs: Quickstart
 - https://github.com/ajbraus/bloginator/tree/main - Flask + SQLAlchemy
 - https://github.com/NYTLAIT/ACS-1320-React-Fundamentals-Tutorial - CSS
@@ -16,6 +16,20 @@ Resources:
 
 - https://dev.to/blamsa0mine/building-a-smart-exit-confirmation-modal-with-the-popstate-api-in-typescript-1bj2 - back/forward
 - https://www.pythonforbeginners.com/basics/check-if-a-string-is-empty-or-whitespace-in-python - Checking for whitespace lol
+
+## JSON TEMPLATE:
+  {
+    "name": ,
+    "status": ,
+    "launch": ,
+    "concluded": ,
+    "description": ,
+    "type": , 
+    "target": ,
+    "objective": , 
+    "site": ,
+    "link":  
+  }
 
 ---------------------------------------------------------
 

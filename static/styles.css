@@ -71,9 +71,6 @@ strong {
   align-items: center;
   gap: 3rem;
 
-  overflow-y: auto;
-  overscroll-behavior: contain;
-
   padding: 3rem;
   min-height: 100vh;
 }
