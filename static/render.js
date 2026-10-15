@@ -41,7 +41,7 @@ function render(missions) {
     `<div class="mission-card">
       <a href=${mission.link} target="_blank">
         <h1>${mission.name}</h1>
-        <p>Launch: ${mission.launch}</p>
+        <p>Launch Date: ${mission.launch_display}</p>
         <p>Objective: ${mission.objective}</p>
       </a>
 
@@ -59,10 +59,10 @@ function render(missions) {
 
         <section class='mission-time-location'>
           <h2>Time & Location</h2>
-          <p><strong>Status:</strong>${mission.status}</p>
-          <p><strong>Launch Date:</strong>${mission.launch}</p>
-          <p><strong>Conclusion:</strong>${mission.concluded ? mission.concluded : '-'}</p>
-          <p><strong>Launch Site or Main Research Location:</strong>${mission.site}</p>
+          <p><strong>Status:</strong> ${mission.status}</p>
+          <p><strong>Launch Date:</strong> ${mission.launch_display}</p>
+          <p><strong>Concluded:</strong> ${mission.concluded_display ?? '-'}</p>
+          <p><strong>Launch Site or Main Research Location:</strong> ${mission.site}</p>
         </section>
 
         <a href=${mission.link} target="_blank">Click Here to Nasa Mission Page</a>
@@ -80,7 +80,7 @@ form.addEventListener('submit', (e) => {
   e.preventDefault()                                                    // Refresh no change the inputs
 
   // -- GETTING ENTRIES
-  const filterData = new FormData(form)                                 // Grab inputs in a certain format, all strings even date unless file or the like
+  const filterData = new FormData(form)                                 // Grab inputs in a certain format, all strings - even date unless file or the like
   const filters = Object.fromEntries(                                   // Turn to key-value pairs
     [...filterData.entries()].filter(entry => entry[1].trim() !== '')   // Iterate through and exclude if value has no entry
   )

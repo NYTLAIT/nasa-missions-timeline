@@ -14,7 +14,7 @@ Resources:
 - https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior - Conver string to date object
 - https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch - Fetching
 
-
+- https://dev.to/blamsa0mine/building-a-smart-exit-confirmation-modal-with-the-popstate-api-in-typescript-1bj2 - back/forward
 - https://www.pythonforbeginners.com/basics/check-if-a-string-is-empty-or-whitespace-in-python - Checking for whitespace lol
 
 ---------------------------------------------------------

@@ -6,6 +6,12 @@ from datetime import date
 
 main_bp = Blueprint('main', __name__, url_prefix='/')
 
+# HELPER DATE READABILITY  -----------
+def format_date(isoformated_date):
+    if not isoformated_date:
+        return None
+    return f'{isoformated_date:%B} {isoformated_date.day}, {isoformated_date.year}'
+
 # ----------- MAIN RENDER ROUTE ----------- -----------
 @main_bp.route('')
 def timeline():
@@ -104,7 +110,9 @@ def missions():
         "name": mission.name,
         "status": mission.status,
         "launch": mission.launch.isoformat(),
+        "launch_display": format_date(mission.launch),
         "concluded": mission.concluded.isoformat() if mission.concluded else None,
+        "concluded_display": format_date(mission.concluded),
         "description": mission.description,
         "type": mission.type,
         "target": mission.target,
