@@ -41,32 +41,37 @@ function render(missions) {
     `<div class="mission-card">
       <a href=${mission.link} target="_blank">
         <h1>${mission.name}</h1>
-        <span class="block h-[2px] w-full bg-gray-300 rounded my-1"></span>
+        <span class="block h-[2px] w-full bg-blue-400 rounded my-1"></span>
         <p><strong>Launch Date:</strong> ${mission.launch_display}</p>
+        <p><strong>Status:</strong> ${mission.status}</p>
         <p><strong>Objective:</strong> ${mission.objective}</p>
       </a>
 
       <div class="mission-modal">
-        <section class='mission-overview'>
-          <h2>Overview</h2>
+        <section>
+          <p class='text-2xl font-semibold'>Overview</p>
+          <p><strong>Mission:</strong> ${mission.name}</p>
           <p>${mission.description}</p>
         </section>
 
-        <section class='mission-details'>
-          <h2>Mission Details</h2>
+        <section>
+          <p class='text-xl font-semibold'>Mission Details</p>
+          <p><strong>Status:</strong> ${mission.status}</p>
           <p><strong>Type:</strong> ${mission.type}</p>
           <p><strong>Target:</strong> ${mission.target}</p>
         </section>
 
-        <section class='mission-time-location'>
-          <h2>Time & Location</h2>
-          <p><strong>Status:</strong> ${mission.status}</p>
+        <section>
+          <p class='text-xl font-semibold'>Dates & Location</p>
           <p><strong>Launch Date:</strong> ${mission.launch_display}</p>
           <p><strong>Concluded:</strong> ${mission.concluded_display ?? '-'}</p>
           <p><strong>Launch/Research Site:</strong> ${mission.site}</p>
         </section>
 
-        <a href=${mission.link} target="_blank">Click Here to Nasa Mission Page</a>
+        <a href=${mission.link} target="_blank"
+          class='block text-center text-black bg-white hover:underline px-[6px] rounded'> 
+          ᯓ➤ Click here to the mission's NASA page
+        </a>
       </div>
     </div>`
   )).join('')
@@ -88,7 +93,7 @@ form.addEventListener('submit', (e) => {
 
   // -- SETTING PAGE URL AND APIURL
   const queryString = new URLSearchParams(filters).toString()           // Turn object to query string
-  history.pushState({}, '', queryString ? `/?${queryString}` : '')     // Set URL else will just render / even when filters working
+  history.pushState({}, '', queryString ? `/?${queryString}` : '/')     // Set URL else will just render / even when filters working
 
   fetchMissions(queryString)
 })
@@ -97,19 +102,10 @@ form.addEventListener('submit', (e) => {
 reset.addEventListener('click', (e) => {
   e.preventDefault()
   form.reset()
-  history.pushState({}, '', '')
+  history.pushState({}, '', '/')
   fetchMissions()
 })
 
 // ----------- BOOKMARKS & BACK ----------- 
 window.addEventListener('popstate', loadFromURL)    // back/forward buttons
 loadFromURL()                                       // initial page load / bookmark
-
-
-// ---- HORIZONTAL SCROLL WITH WHEEL | NOT WORKING ----
-// timeline.addEventListener('wheel', (e) => {
-//   if (e.deltaY !== 0) {                         // AI: If the user is scrolling vertically, redirect it horizontally
-//     e.preventDefault();                         // AI: Prevent standard vertical page scrolling
-//     container.scrollLeft += e.deltaY;
-//   }
-// });
