@@ -32,14 +32,14 @@ SCHEDULE:
 
 3. Wednesday (DAY 3):
     - Goal: YESTERDAY - Be able to render the timeline, populate json| FILTER - Finalize filter
-    - Finished: Able to seed database with json data | Routes handle bookmarking filters | Able to fetch and get json data from routes | Able to render data | FILTER FINALIZE BASICALLY
+    - Finished: Able to seed database with json data | Routes handle bookmarking filters | Able to fetch and get json data from routes | Able to render data | FILTER FINALIZE BASICALLY | Styled form, modals, timeline (vertical more practical) | STYLES DONE BASICALLY
 
 4. Thursday (DAY 4):
     - Goal: STYLING && PRESENTATION - Style the application, create presetation slides, create README.md
 
 ---------------------------------------------------------
 
-AI Use:
+## AI Use:
 - pattern for seeding data using flask-sqlalchemy 2.0
 - Model CheckConstraint method use
 - Horizontal Scroll Javascript Listener
@@ -48,7 +48,7 @@ AI Use:
 - Getting best practices to get multiple param items that may have empty strings
 - Full search on sql
 - Organizing routes; how to seperate the logic of the routes efficiently
-- Prompt: "If I have a date value in strings, in a dictionary, in a list of many dictionaries with the same issue. How can I convert them all to actual date objects? Would it okay to iterate over all dictionaries and do datetime.strptime(entry, %Y-%m-%d)?"
+- Prompt: "If I have a date value in strings, in a dictionary, in a list of many dictionaries with the same issue. How can I convert them all to actual date objects? Would it okay to iterate over all dictionaries and do datetime.strptime(entry, %Y-%m-%d)"
 - "Prompt: "Whys is this:     
 missions = db.session.scalars(stmt).all()
 return jsonify(missions)
@@ -58,7 +58,13 @@ giving me a type error?"
 - Prompt: "Do you know why h1 or like h2 tags are not looking like they should when rendered with Javascript? Is it because the script is running before the browser runs or something like that? The tags are correctly paired and closed too."
 - FULL JS CODE for horizontal scrolling with the mouse for the timeline
 
-Notes:
+## KNOWN ISSUES/WORK ON:
+- Aria accessibility may not be good on the cards themselves
+- No flash messages
+    - Hard to know what has been inputed
+    - Does not tell when no input has been inputed
+
+## Notes:
 - (Models) column name: Mapped['python constraints'] = mapped_column('database constraints')
     Make sure to have them both
 - Flask cannot just return nothing (return or return None), must be a valid HTTP response (Strings work)
