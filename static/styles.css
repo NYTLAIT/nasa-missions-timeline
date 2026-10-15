@@ -6,6 +6,7 @@ body {
 h1 {
   font-size: 2rem;
   font-weight: bold;
+  line-height: 1.1;
 }
 
 h2 {
@@ -45,19 +46,30 @@ h2 {
 
 .buttons button {
   background-color: #60a5fa;
-  padding: 0.4rem 0;
+  padding: 0.6rem 0;
   border-radius: 4px;
 }
 
-/* ----------- HORIZONTAL SCROLLING ----------- */
-.timeline {
+/* ----------- TIMELINE CONTAINERS ----------- */
+.timeline-container {
   display: flex;
-  overflow-x: auto;
-  white-space: nowrap;
-  scroll-behavior: smooth;
-  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
 
-  margin: auto;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+
+  padding: 3rem;
+  min-height: 100vh;
+}
+
+.timeline {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 2rem;
 }
 
@@ -71,6 +83,8 @@ h2 {
   position: relative;
 
   border: 1px solid black;
+  padding: 1rem;
+  max-width: 800px;
 }
 
 .mission-modal {

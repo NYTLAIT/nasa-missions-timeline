@@ -41,8 +41,9 @@ function render(missions) {
     `<div class="mission-card">
       <a href=${mission.link} target="_blank">
         <h1>${mission.name}</h1>
-        <p>Launch Date: ${mission.launch_display}</p>
-        <p>Objective: ${mission.objective}</p>
+        <span class="block h-[2px] w-full bg-gray-300 rounded my-1"></span>
+        <p><strong>Launch Date:</strong> ${mission.launch_display}</p>
+        <p><strong>Objective:</strong> ${mission.objective}</p>
       </a>
 
       <div class="mission-modal">
@@ -53,8 +54,8 @@ function render(missions) {
 
         <section class='mission-details'>
           <h2>Mission Details</h2>
-          <p><strong>Type:</strong>${mission.type}</p>
-          <p><strong>Target:</strong>${mission.target}</p>
+          <p><strong>Type:</strong> ${mission.type}</p>
+          <p><strong>Target:</strong> ${mission.target}</p>
         </section>
 
         <section class='mission-time-location'>
@@ -62,7 +63,7 @@ function render(missions) {
           <p><strong>Status:</strong> ${mission.status}</p>
           <p><strong>Launch Date:</strong> ${mission.launch_display}</p>
           <p><strong>Concluded:</strong> ${mission.concluded_display ?? '-'}</p>
-          <p><strong>Launch Site or Main Research Location:</strong> ${mission.site}</p>
+          <p><strong>Launch/Research Site:</strong> ${mission.site}</p>
         </section>
 
         <a href=${mission.link} target="_blank">Click Here to Nasa Mission Page</a>
@@ -105,13 +106,10 @@ window.addEventListener('popstate', loadFromURL)    // back/forward buttons
 loadFromURL()                                       // initial page load / bookmark
 
 
-// ---- HORIZONTAL SCROLL WITH WHEEL ----
-timeline.addEventListener('wheel', (evt) => {
-  if (evt.deltaX !== 0) return    // AI: Check if it's already scrolling horizontally
-  evt.preventDefault()            // AI: Prevent default vertical page scroll
-
-  container.scrollBy({            // AI: Convert vertical wheel movement (deltaY) to horizontal scroll
-    left: evt.deltaY,
-    behavior: 'smooth'            // AI: Optional: adds smooth scrolling
-  }, { passive: false })
-})
+// ---- HORIZONTAL SCROLL WITH WHEEL | NOT WORKING ----
+// timeline.addEventListener('wheel', (e) => {
+//   if (e.deltaY !== 0) {                         // AI: If the user is scrolling vertically, redirect it horizontally
+//     e.preventDefault();                         // AI: Prevent standard vertical page scrolling
+//     container.scrollLeft += e.deltaY;
+//   }
+// });
