@@ -32,7 +32,7 @@ SCHEDULE:
 
 3. Wednesday (DAY 3):
     - Goal: YESTERDAY - Be able to render the timeline, populate json| FILTER - Finalize filter
-    - Finished: Able to seed database with json data | 
+    - Finished: Able to seed database with json data | Routes handle bookmarking filters | Able to fetch and get json data from routes | Able to render data 
 
 4. Thursday (DAY 4):
     - Goal: STYLING && PRESENTATION - Style the application, create presetation slides
