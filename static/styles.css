@@ -3,6 +3,34 @@ body {
   height: 100%;
 }
 
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* ----------- HORIZONTAL SCROLLING ----------- */
+.timeline {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+  width: 100%;
+
+  margin: auto;
+  gap: 2rem;
+}
+
+/* Optional: hide the default scrollbar */
+.timeline::-webkit-scrollbar {
+  display: none;
+}
+
+/* ----------- MISSION CARD AND MODAL ----------- */
 .mission-card {
   position: relative;
 
@@ -14,7 +42,7 @@ body {
   position: absolute;
 
   bottom: 100%;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.1rem;
   left: 0;
   z-index: 999;
 
@@ -30,3 +58,7 @@ body {
 .mission-card:hover .mission-modal {
   display: block
 }
+
+/* ----------- MISSION ITEMS ----------- */
+
+/* ----------- MODAL SECTIONS ----------- */

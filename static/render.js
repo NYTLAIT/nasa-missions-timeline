@@ -103,3 +103,15 @@ reset.addEventListener('click', (e) => {
 // ----------- BOOKMARKS & BACK ----------- 
 window.addEventListener('popstate', loadFromURL)    // back/forward buttons
 loadFromURL()                                       // initial page load / bookmark
+
+
+// ---- HORIZONTAL SCROLL WITH WHEEL ----
+timeline.addEventListener('wheel', (evt) => {
+  if (evt.deltaX !== 0) return    // AI: Check if it's already scrolling horizontally
+  evt.preventDefault()            // AI: Prevent default vertical page scroll
+
+  container.scrollBy({            // AI: Convert vertical wheel movement (deltaY) to horizontal scroll
+    left: evt.deltaY,
+    behavior: 'smooth'            // AI: Optional: adds smooth scrolling
+  }, { passive: false })
+})

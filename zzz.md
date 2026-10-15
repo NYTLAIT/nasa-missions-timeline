@@ -32,10 +32,10 @@ SCHEDULE:
 
 3. Wednesday (DAY 3):
     - Goal: YESTERDAY - Be able to render the timeline, populate json| FILTER - Finalize filter
-    - Finished: Able to seed database with json data | Routes handle bookmarking filters | Able to fetch and get json data from routes | Able to render data 
+    - Finished: Able to seed database with json data | Routes handle bookmarking filters | Able to fetch and get json data from routes | Able to render data | FILTER FINALIZE BASICALLY
 
 4. Thursday (DAY 4):
-    - Goal: STYLING && PRESENTATION - Style the application, create presetation slides
+    - Goal: STYLING && PRESENTATION - Style the application, create presetation slides, create README.md
 
 ---------------------------------------------------------
 
@@ -55,6 +55,8 @@ return jsonify(missions)
 giving me a type error?"
 - Prompt: "Say a url points me to route that gives me a json of items I need but another url actually handles the rendering. How can I make it so that it retains bookmark functionality as the parameters will disappear when rendered while keeping the setup?"
 - Formatting dates in javascript rendering to something readable
+- Prompt: "Do you know why h1 or like h2 tags are not looking like they should when rendered with Javascript? Is it because the script is running before the browser runs or something like that? The tags are correctly paired and closed too."
+- FULL JS CODE for horizontal scrolling with the mouse for the timeline
 
 Notes:
 - (Models) column name: Mapped['python constraints'] = mapped_column('database constraints')
