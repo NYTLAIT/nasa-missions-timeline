@@ -1,95 +1,102 @@
 {% extends "base.html" %}
 
-<!-- ----------- FORM ----------- -->
-{% block header %}
-<form id="filter" class="filter">
-  <!-- General Search -->
-  <label for="general-search">Search
-    <input type="text" id="general-search" name="general-search">
-  </label>
-
-  <!-- Status -->
-  <fieldset>
-    <legend>Status</legend>
-
-    <label for="status-ongoing">
-      <input type="radio" id="status-ongoing" name="status" value="ongoing">
-      Ongoing
-    </label>
-
-    <label for="status-concluded">
-      <input type="radio" id="status-concluded" name="status" value="concluded">
-      Concluded
-    </label>
-
-    <label for="status-abandoned">
-      <input type="radio" id="status-abandoned" name="status" value="abandoned">
-      Abandoned
-    </label>
-  </fieldset>
-
-  <!-- Date Range -->
-  <fieldset>
-    <legend>Date Range</legend>
-    <label for="date-start">Start
-      <input type="date" id="date-start" name="date-start">
-    </label>
-    <label for="date-end">End
-      <input type="date" id="date-end" name="date-end">
-    </label>
-  </fieldset>
-
-  <!-- Launch Range -->
-  <fieldset>
-    <legend>Launch Range</legend>
-    <label for="launch-start">Start
-      <input type="date" id="launch-start" name="launch-start">
-    </label>
-    <label for="launch-end">End
-      <input type="date" id="launch-end" name="launch-end">
-    </label>
-  </fieldset>
-
-  <!-- Concluded Range -->
-  <fieldset>
-    <legend>Concluded Range</legend>
-    <label for="concluded-start">Start
-      <input type="date" id="concluded-start" name="concluded-start">
-    </label>
-    <label for="concluded-end">End
-      <input type="date" id="concluded-end" name="concluded-end">
-    </label>
-  </fieldset>
-
-  <!-- Type -->
-  <label for="type">Type
-    <input type="text" id="type" name="type">
-  </label>
-
-  <!-- Target -->
-  <label for="target">Target
-    <input type="text" id="target" name="target">
-  </label>
-
-  <!-- Objective -->
-  <label for="objective">Objective
-    <input type="text" id="objective" name="objective">
-  </label>
-
-  <!-- Site -->
-  <label for="site">Site
-    <input type="text" id="site" name="site">
-  </label>
-
-  <input type="submit" value="Search!">
-</form>
-
-<button id="reset">Reset</button>
-{% endblock %}
-
-<!-- ----------- TIMELINE ----------- -->
 {% block content %}
-<div id="timeline" class="timeline">
-  <!-- JAVASCRIPT POPULATED MISSIONS -->
+<div class="main-container grid grid-cols-6">
+
+  <!-- ----------- FORM ----------- -->
+  <div class="form-container col-span-1">
+    <form id="filter" class="filter flex flex-col gap-1">
+      <!-- General Search -->
+      <label for="general-search"><strong>Search</strong>
+        <input type="text" id="general-search" name="general-search">
+      </label>
+
+      <!-- Status -->
+      <fieldset class="radio">
+        <legend><strong>Status</strong></legend>
+
+        <label for="status-ongoing">
+          <input type="radio" id="status-ongoing" name="status" value="ongoing">
+          Ongoing
+        </label>
+
+        <label for="status-concluded">
+          <input type="radio" id="status-concluded" name="status" value="concluded">
+          Concluded
+        </label>
+
+        <label for="status-abandoned">
+          <input type="radio" id="status-abandoned" name="status" value="abandoned">
+          Abandoned
+        </label>
+      </fieldset>
+
+      <!-- Date Range -->
+      <fieldset>
+        <legend><strong>Date Range</strong></legend>
+        <label for="date-start"><strong>Start</strong>
+          <input type="date" id="date-start" name="date-start">
+        </label>
+        <label for="date-end"><strong>End</strong>
+          <input type="date" id="date-end" name="date-end">
+        </label>
+      </fieldset>
+
+      <!-- Launch Range -->
+      <fieldset>
+        <legend><strong>Launch Range</strong></legend>
+        <label for="launch-start"><strong>Start</strong>
+          <input type="date" id="launch-start" name="launch-start">
+        </label>
+        <label for="launch-end"><strong>End</strong>
+          <input type="date" id="launch-end" name="launch-end">
+        </label>
+      </fieldset>
+
+      <!-- Concluded Range -->
+      <fieldset>
+        <legend><strong>Concluded Range</strong></legend>
+        <label for="concluded-start"><strong>Start</strong>
+          <input type="date" id="concluded-start" name="concluded-start">
+        </label>
+        <label for="concluded-end"><strong>End</strong>
+          <input type="date" id="concluded-end" name="concluded-end">
+        </label>
+      </fieldset>
+
+      <!-- Type -->
+      <label for="type"><strong>Type</strong>
+        <input type="text" id="type" name="type">
+      </label>
+
+      <!-- Target -->
+      <label for="target"><strong>Target</strong>
+        <input type="text" id="target" name="target">
+      </label>
+
+      <!-- Objective -->
+      <label for="objective"><strong>Objective</strong>
+        <input type="text" id="objective" name="objective">
+      </label>
+
+      <!-- Site -->
+      <label for="site"><strong>Site</strong>
+        <input type="text" id="site" name="site">
+      </label>
+
+    </form>
+
+    <div class="buttons grid grid-cols-2 gap-2 my-2">
+      <button type="submit" form="filter"><strong>Search!</strong></button>
+      <button id="reset"><strong>Reset</strong></button>
+    </div>
+
+  </div>
+
+  <!-- ----------- TIMELINE ----------- -->
+  <div id="timeline" class="timeline col-span-5 px-4">
+    <!-- JAVASCRIPT POPULATED MISSIONS -->
+  </div>
+
 </div>
 {% endblock %}

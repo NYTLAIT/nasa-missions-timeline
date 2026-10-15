@@ -87,7 +87,7 @@ form.addEventListener('submit', (e) => {
 
   // -- SETTING PAGE URL AND APIURL
   const queryString = new URLSearchParams(filters).toString()           // Turn object to query string
-  history.pushState({}, '', queryString ? `/?${queryString}` : '/')     // Set URL else will just render / even when filters working
+  history.pushState({}, '', queryString ? `/?${queryString}` : '')     // Set URL else will just render / even when filters working
 
   fetchMissions(queryString)
 })
@@ -96,8 +96,8 @@ form.addEventListener('submit', (e) => {
 reset.addEventListener('click', (e) => {
   e.preventDefault()
   form.reset()
-  history.pushState({}, '', '/')
-  fetchMissions(params.toString())
+  history.pushState({}, '', '')
+  fetchMissions()
 })
 
 // ----------- BOOKMARKS & BACK ----------- 

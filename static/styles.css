@@ -13,6 +13,42 @@ h2 {
   font-weight: bold;
 }
 
+/* ----------- FORM STYLING ----------- */
+.filter input {
+  width: 100%;
+  border: 1px solid #60a5fa;
+  border-radius: 4px;
+  background-color: white;
+}
+
+.filter .radio input {
+  width: auto;
+}
+
+.filter>fieldset input {
+  border: none;
+}
+
+.filter>label,
+.filter>fieldset {
+  padding: 0.4rem;
+  border: 1px solid #60a5fa;
+  background-color: #e2eaf4;
+}
+
+.filter fieldset {
+  display: flex;
+  flex-direction: column;
+
+  padding-top: 0;
+}
+
+.buttons button {
+  background-color: #60a5fa;
+  padding: 0.4rem 0;
+  border-radius: 4px;
+}
+
 /* ----------- HORIZONTAL SCROLLING ----------- */
 .timeline {
   display: flex;
