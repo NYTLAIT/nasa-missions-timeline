@@ -49,7 +49,7 @@ SCHEDULE:
     - Finished: Able to seed database with json data | Routes handle bookmarking filters | Able to fetch and get json data from routes | Able to render data | FILTER FINALIZE BASICALLY | Styled form, modals, timeline (vertical more practical) | STYLES DONE BASICALLY
 
 4. Thursday (DAY 4):
-    - Goal: STYLING && PRESENTATION - Style the application, create presetation slides, create README.md
+    - Goal: POPULATE && PRESENTATION - Populate Json, create presetation slides, create README.md
 
 ---------------------------------------------------------
 

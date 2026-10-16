@@ -111,6 +111,7 @@ def missions():
         "status": mission.status,
         "launch": mission.launch.isoformat(),
         "launch_display": format_date(mission.launch),
+        "launch_year": mission.launch.year,
         "concluded": mission.concluded.isoformat() if mission.concluded else None,
         "concluded_display": format_date(mission.concluded),
         "description": mission.description,
