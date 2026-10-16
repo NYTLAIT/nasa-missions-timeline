@@ -44,5 +44,88 @@
     "objective": "First human spaceflight program, Recover crew and spacecraft safely, Evaluate human performan in space, Orbit a crewed spaceraft",
     "site": "Cape Canaveral Air Force Station",
     "link": "https://www.nasa.gov/project-mercury/"
+  },
+  {
+    "name": "James Webb Space Telescope",
+    "status": "ongoing",
+    "launch": "2021-12-25",
+    "description": "Space telescope designed to study the early universe, galaxy formation, stars, and planetary systems. It orbits the Sun near Earth's second Lagrange point (L2).",
+    "type": "Space Telescope",
+    "target": "Second Lagrange Point (L2)",
+    "objective": "Study the early universe and the formation of stars and planetary systems",
+    "site": "Guiana Space Centre",
+    "link": "https://science.nasa.gov/mission/webb/"
+  },
+  {
+    "name": "Kepler / K2",
+    "status": "concluded",
+    "launch": "2009-03-06",
+    "concluded": "2018-10-30",
+    "description": "Space telescope that searched for planets orbiting distant stars and expanded its observations during the K2 mission. It discovered thousands of exoplanets and candidates.",
+    "type": "Space Telescope",
+    "target": "Heliocentric orbit",
+    "objective": "Search for exoplanets",
+    "site": "Cape Canaveral Air Force Station",
+    "link": "https://science.nasa.gov/mission/kepler/"
+  },
+  {
+    "name": "Spitzer Space Telescope",
+    "status": "concluded",
+    "launch": "2003-07-25",
+    "concluded": "2020-01-30",
+    "description": "Space telescope that observed the universe in infrared light, studying objects ranging from nearby planets and stars to distant galaxies. It revealed Saturn's wispy rings and the first telescope to detect light from an exoplanet, and the first known star system with seven Earth-sized exoplanets.",
+    "type": "Space Telescope",
+    "target": "Heliocentric orbit",
+    "objective": "Study the universe in infrared",
+    "site": "Cape Canaveral Air Force Station",
+    "link": "https://science.nasa.gov/mission/spitzer/"
+  },
+  {
+    "name": "Spirit",
+    "status": "concluded",
+    "launch": "2003-06-10",
+    "concluded": "2011-05-25",
+    "description": "Uncovered strong evidence that Mars was once a much wetter planet, studying the history of climate and water in places where conditions may have once been favorable to life. Travelled 5 miles and operated for 6 years, more than 25 times its original intended lifetime.",
+    "type": "Rover",
+    "target": "Gusev Crater, Mars",
+    "objective": "Investigate evidence of past water on Mars, Mars surface exploration",
+    "site": "Cape Canaveral Air Force Station",
+    "link": "https://science.nasa.gov/mission/mer-spirit/"
+  },
+  {
+    "name": ,
+    "status": ,
+    "launch": ,
+    "concluded": ,
+    "description": ,
+    "type": ,
+    "target": ,
+    "objective": ,
+    "site": ,
+    "link":
+  },
+  {
+    "name": ,
+    "status": ,
+    "launch": ,
+    "concluded": ,
+    "description": ,
+    "type": ,
+    "target": ,
+    "objective": ,
+    "site": ,
+    "link":
+  },
+  {
+    "name": ,
+    "status": ,
+    "launch": ,
+    "concluded": ,
+    "description": ,
+    "type": ,
+    "target": ,
+    "objective": ,
+    "site": ,
+    "link":
   }
 ]

@@ -18,7 +18,7 @@ Run python3 seed.py before running app to seed
 - https://www.pythonforbeginners.com/basics/check-if-a-string-is-empty-or-whitespace-in-python - Checking for whitespace lol
 
 ## JSON TEMPLATE:
-  {
+{
     "name": ,
     "status": ,
     "launch": ,
@@ -29,7 +29,7 @@ Run python3 seed.py before running app to seed
     "objective": , 
     "site": ,
     "link":  
-  }
+}
 
 ---------------------------------------------------------
 
@@ -77,6 +77,7 @@ giving me a type error?"
 - No flash messages
     - Hard to know what has been inputed
     - Does not tell when no input has been inputed
+- If User Clicks search or reset eve when the same, that is a page refresh
 
 ## Notes:
 - (Models) column name: Mapped['python constraints'] = mapped_column('database constraints')
