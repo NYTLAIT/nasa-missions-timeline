@@ -1,7 +1,7 @@
 Run Using:
 $ source .venv/bin/activate
-$ flask --app app run
-Seeding:
+$ `flask --app app run`
+# Seeding:
 Run python3 seed.py before running app to seed
 
 ## Resources:
@@ -13,7 +13,6 @@ Run python3 seed.py before running app to seed
 - https://github.com/NYTLAIT/savemeporo - Dynamic Search
 - https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior - Conver string to date object
 - https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch - Fetching
-
 - https://dev.to/blamsa0mine/building-a-smart-exit-confirmation-modal-with-the-popstate-api-in-typescript-1bj2 - back/forward
 - https://www.pythonforbeginners.com/basics/check-if-a-string-is-empty-or-whitespace-in-python - Checking for whitespace lol
 
@@ -51,6 +50,9 @@ SCHEDULE:
 4. Thursday (DAY 4):
     - Goal: POPULATE && PRESENTATION - Populate Json, create presetation slides, create README.md
     - Finished: Presentation done
+
+5. Friday (FINAL DAY - Before Class):
+    - Populate the data.json, Finalize everything, Make Readme.md
 
 ---------------------------------------------------------
 
