@@ -1,6 +1,6 @@
-Run Using:
+## Run Using:
 $ source .venv/bin/activate
-$ `flask --app app run`
+$ `flask --app app run
 # Seeding:
 Run python3 seed.py before running app to seed
 
@@ -52,7 +52,7 @@ SCHEDULE:
     - Finished: Presentation done
 
 5. Friday (FINAL DAY - Before Class):
-    - Populate the data.json, Finalize everything, Make Readme.md
+    - GOAL AND MUST FINISH: Populate the data.json, Finalize everything, Make Readme.md
 
 ---------------------------------------------------------
 

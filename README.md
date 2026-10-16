@@ -34,7 +34,7 @@ Explore NASA missions through an interactive timeline! Search and filter mission
 
 ## Why:
 ### Idea:
-Disliked the current NASA layout for missions that seems uninformative and unhandy for browsing. Timeline was a good way to showcase the history informatively and be easy to broowse.
+Disliked the current NASA layout for missions that seems uninformative and unhandy for browsing. Timeline was a good way to showcase the missions informatively and be easy to browse.
 
 ### Tech:
 - Understand recent SQLAlchemy querying
@@ -50,4 +50,4 @@ Disliked the current NASA layout for missions that seems uninformative and unhan
 
 ## Other notes
 - Slide presentation link: https://docs.google.com/presentation/d/1ti5pGkKTjlOtIJSogj-0EnTHnpLLwzCaD2od99MWafM/edit?usp=sharing
-- - Check out zzz.md for resources used, AI use, progress, and known issues
+- Check out zzz.md for resources used, AI use, progress, and known issues
