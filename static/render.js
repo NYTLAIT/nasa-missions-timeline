@@ -52,7 +52,7 @@ function render(missions) {
       <div class="mission-modal">
         <section>
           <p class='text-2xl font-semibold'>Overview</p>
-          <p><strong>Mission:</strong> ${mission.name}</p>
+          <p><strong>${mission.name}</strong></p>
           <p>${mission.description}</p>
         </section>
 
