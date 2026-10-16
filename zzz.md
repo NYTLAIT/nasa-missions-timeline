@@ -50,6 +50,7 @@ SCHEDULE:
 
 4. Thursday (DAY 4):
     - Goal: POPULATE && PRESENTATION - Populate Json, create presetation slides, create README.md
+    - Finished: Presentation done
 
 ---------------------------------------------------------
 
@@ -71,13 +72,15 @@ giving me a type error?"
 - Formatting dates in javascript rendering to something readable
 - Prompt: "Do you know why h1 or like h2 tags are not looking like they should when rendered with Javascript? Is it because the script is running before the browser runs or something like that? The tags are correctly paired and closed too."
 - FULL JS CODE for horizontal scrolling with the mouse for the timeline
+- Populating the json with missions (2/5ths done by AI but checked by me due to time constraint)
 
 ## KNOWN ISSUES/WORK ON:
 - Aria accessibility may not be good on the cards themselves
 - No flash messages
     - Hard to know what has been inputed
     - Does not tell when no input has been inputed
-- If User Clicks search or reset eve when the same, that is a page refresh
+- If User Clicks search or reset eve when the same, that is a page refresh.
+- DATA INCONSISTENCIES, with structure, wording, and guidelines of what should be there
 
 ## Notes:
 - (Models) column name: Mapped['python constraints'] = mapped_column('database constraints')
