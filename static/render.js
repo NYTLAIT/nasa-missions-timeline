@@ -42,8 +42,10 @@ function render(missions) {
       <a href=${mission.link} target="_blank">
         <h1>${mission.name}</h1>
         <span class="block h-[2px] w-full bg-blue-400 rounded my-1"></span>
-        <p class='inline-block px-[4px] font-semibold text-2xl bg-[#e2eaf4] rounded'>${mission.launch_year}</p>
-        <p><strong>Status:</strong> ${mission.status}</p>
+        <div class='flex justify-between items-center'>
+          <p class='inline-block px-[4px] font-semibold text-2xl bg-[#e2eaf4] rounded'>${mission.launch_year}</p>
+          <p><strong>${mission.status}</strong></p>
+        </div>
         <p><strong>Objective:</strong> ${mission.objective}</p>
       </a>
 
